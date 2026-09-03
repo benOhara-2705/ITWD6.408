@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+    <link rel="stylesheet" href="css/custom.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+
+    <header>
+        <nav class="navbar navbar-expand-lg bg-gradient">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">
+                    <img src="images/global.png" height="30 rem" alt="Globe" class="d-inline-block align-text-top">
+                    ITWD6.408
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav w-100 mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="form.html">Forms</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="webapi.html">WebAPI</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="js-demo.html">Javascript</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="research.html">Research</a>
+                        </li>
+                        <form class="d-flex ms-auto" role="search">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+                            <button class="btn btn-outline-success" type="submit">Search</button>
+                        </form>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section id="demo-page" class="container-fluid">
+        <div class="row">
+            <div id="demo-buttons" class="col-12 col-md-3 col-lg-3">
+                <div class="container-fluid my-3">
+                    <div class="row gap-lg-2 gap-md-2 gap-0">
+                        <button class="btn btn-secondary col-6 col-md-12 col-lg-12" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#demo-one" aria-expanded="false"
+                            aria-controls="demo-one">Demo One</button>
+
+                        <button class="btn btn-secondary col-6 col-md-12 col-lg-12" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#demo-two" aria-expanded="false"
+                            aria-controls="demo-two">Demo Two</button>
+
+                        <button class="btn btn-secondary col-6 col-md-12 col-lg-12" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#demo-three" aria-expanded="false"
+                            aria-controls="demo-three">Demo Three</button>
+
+                        <button class="btn btn-secondary col-6 col-md-12 col-lg-12" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#demo-four" aria-expanded="false"
+                            aria-controls="demo-four">Demo Four</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="js-demos" class="col-12 col-md-8 col-lg-9 my-3">
+                <h2>Javascript Demos</h2>
+                <div id="demo-one" class="demos collapse p-3" data-bs-parent="#js-demos">
+                    <div class="w-auto min-vh-200">
+                        <h2 class="demo-headings">Demo One: Add comment below a product</h2>
+                        <h2 id="product-name" class="text-center">Garfield Couch</h2>
+                        <p class="text-center">
+                            <img src="images/garfield_couch.png" alt="Garfield Couch" class="col-12 col-lg-6 mx-auto">
+                        </p>
+                        <h5 id="product-description-header" class="mt-1">Description</h5>
+                        <p id="product-description">This is it. Your entire life has been leading up to this moment.
+                            Made in the USA from the finest leather (don't ask where we got it from), this couch is sure
+                            to serve as an amazing talking piece for your living room. (Mildly used)</p>
+                    </div>
+                    <h4>Comments</h4>
+                    <div id="comments"></div>
+                    <h4>Leave us a review here!</h4><br>
+                    <input type="text" placeholder="Name" id="comment_name" size="40"><br>
+                    <textarea id="comment_text" placeholder="Comment" cols="43" rows="10"></textarea><br>
+                    <button id="post-comment" type="button">POST</button>
+
+                </div>
+
+                <div id="demo-two" class="demos collapse p-3" data-bs-parent="#js-demos">
+                    <h2 class="demo-headings">Demo Two: Add products to cart</h2>
+                    <div class="row mb-2">
+                        <div class="col">
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                data-bs-target="#cart">Cart
+                                (<span class="total-count"></span>)</button>
+                            <button class="clear-cart btn btn-danger">Clear Cart</button>
+                        </div>
+                    </div>
+
+                    <div class="d-flex justify-content-center">
+                        <div class="row">
+                            <div class="col">
+                                <div class="card" style="width: 20rem;">
+                                    <img class="card-img-top h-auto" src="images/gromitmug.png" alt="Card image cap">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Gromit Mug</h4>
+                                        <p class="card-text">Price: $16</p>
+                                        <a href="#" data-name="Gromit Mug" data-price="16"
+                                            class="add-to-cart btn btn-primary">Add to cart</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card" style="width: 20rem;">
+                                    <img class="card-img-top h-auto" src="images/gromitmug2.png" alt="Card image cap">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Gromit Mug Mug</h4>
+                                        <p class="card-text">Price: $8</p>
+                                        <a href="#" data-name="Gromit Mug Mug" data-price="8"
+                                            class="add-to-cart btn btn-primary">Add to cart</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card" style="width: 20rem;">
+                                    <img class="card-img-top h-auto" src="images/gromitmug3.png" alt="Card image cap">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Gromit Mug Mug Mug</h4>
+                                        <p class="card-text">Price: $4</p>
+                                        <a href="#" data-name="Gromit Mug Mug Mug" data-price="4"
+                                            class="add-to-cart btn btn-primary">Add to cart</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal fade" id="cart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-lg" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Cart</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <table class="show-cart table">
+
+                                    </table>
+                                    <div>Total price: $<span class="total-cart"></span></div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Order now</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="demo-three" class="demos collapse p-3" data-bs-parent="#js-demos">
+                    <h2 class="demo-headings">Demo Three: Authentication</h2>
+                    <h4>Sign up</h4>
+                    <div class="input-group">
+                        <span class="input-group-text" id="username-addon">Username</span>
+                        <input type="text" class="form-control" id="signup_username"
+                            aria-describedby="basic-addon3 basic-addon4" required>
+                    </div>
+                    <br>
+                    <div class="input-group">
+                        <span class="input-group-text" id="password-addon">Password</span>
+                        <input type="password" class="form-control" id="signup_password"
+                            aria-describedby="password-addon" required>
+                    </div>
+                    <br>
+                    <input type="button" class="form-control w-50" value="Sign up" onclick="createAccount()">
+
+                    <br>
+                    <br>
+                    <h4>Login</h4>
+                    <div class="input-group">
+                        <span class="input-group-text" id="username-addon">Username</span>
+                        <input type="text" class="form-control" id="login_username"
+                            aria-describedby="username-addon" required>
+                    </div>
+                    <br>
+                    <div class="input-group">
+                        <span class="input-group-text" id="password-addon">Password</span>
+                        <input type="password" class="form-control" id="login_password"
+                            aria-describedby="password-addon" required>
+                    </div>
+                    <br>
+                    <input type="button" class="form-control w-50" value="Login" onclick="validateAccount()">
+                </div>
+
+                <div id="demo-four" class="demos collapse p-3" data-bs-parent="#js-demos">
+                    <h2 class="body demo-headings">Demo Four: Change the Webpage!</h2>
+                    <div id="page_content">
+                        <label class="input-group">Select Text Size: </label>
+                        <select class="input-group" id="text-size" onchange="customizeText()">
+                            <option></option>
+                            <option value="60px">please don't</option>
+                            <option value="35px">very big</option>
+                            <option value="25px">big</option>
+                            <option value="16px">normal</option>
+                            <option value="8px">small</option>
+                        </select>
+
+                        <br>
+                        <label class="input-group">Select color: </label>
+                        <select class="input-group" id="colorOption" onchange="changeColor()">
+                            <option value="empty"></option>
+                            <option value="red">red</option>
+                            <option value="green">green</option>
+                            <option value="yellow">yellow</option>
+                            <option value="ivory">ivory</option>
+                            <option value="pink">pink</option>
+                            <option value="purple">purple</option>
+                            <option value="rainbow">rainbow</option>
+                            <option value="earth">earth mode</option>
+                        </select>
+
+                        <br><br>
+                        <h2>Lorem Ipsum</h2>
+                        <img src="images/supermarket.png" alt="Image" width="300px">
+                        <p id="abstract">"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur,
+                            adipisci velit..."<br>
+                            "There is no one who loves pain itself, who seeks after it and wants to have it, simply
+                            because it is pain..."
+                        </p>
+                        <p id="detailed">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse semper
+                            magna id nibh finibus, ultrices molestie tellus venenatis. Curabitur gravida, tortor sit
+                            amet molestie consectetur, tortor tortor dictum leo, nec imperdiet neque leo id felis.<br>
+                            Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
+                            egestas. Donec at egestas leo. Maecenas varius malesuada metus, at malesuada massa vulputate
+                            et.
+                        </p>
+                        <button id="expandBtn" onclick="expandText()" value="MORE">MORE</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="container-fluid pt-3 bg-gradient mt-auto">
+        <div class="row align-items-center g-3">
+            <div id="socials-div"
+                class="col-12 col-md d-flex align-items-center justify-content-center justify-content-md-start">
+                <ul id="socials" class="list-unstyled d-flex no-wrap align-items-center gap-3 p-0 md-3">
+                    <li class="d-flex align-items-center">
+                        <a href="#" class="d-flex align-items-center">
+                            <img src="./images/linkedin.png" id="linkedin" alt="Linkedin"
+                                class="social_logos img-thumbnail bg-black">
+                        </a>
+                    </li>
+                    <li class="d-flex align-items-center">
+                        <a href="#" class="d-flex align-items-center">
+                            <img src="./images/youtube.png" id="youtube" alt="Youtube"
+                                class="social_logos img-thumbnail bg-black">
+                        </a>
+                    </li>
+                    <li class="d-flex align-items-center">
+                        <a href="#" class="d-flex align-items-center">
+                            <img src="./images/twitterx.png" id="twitter" alt="Twitter (X)"
+                                class="social_logos img-thumbnail bg-black">
+                        </a>
+                    </li>
+                    <li class="d-flex align-items-center">
+                        <a href="#" class="d-flex align-items-center">
+                            <img src="./images/facebook.png" id="facebook" alt="Facebook"
+                                class="social_logos img-thumbnail bg-black">
+                        </a>
+                    </li>
+                    <li class="d-flex align-items-center">
+                        <a href="#" class="d-flex align-items-center">
+                            <img src="./images/instagram.png" id="instagram" alt="Instagram"
+                                class="social_logos img-thumbnail bg-black">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div id="copyright-div" class="col-12 col-md text-center">
+                <p>© 2026 Ben O'Hara</p>
+            </div>
+
+            <div id="privacy-div" class="col-12 col-md text-center text-md-end">
+                <a href="#" class="link-primary">
+                    <p>Privacy Policy</p>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/js-demo.js" type="module"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,216 @@
+header,
+footer {
+    background-color: #9BD07E;
+}
+
+#bio {
+    background-color: #E3C701;
+}
+
+#tech {
+    background-color: #EE6973;
+}
+
+#statement {
+    background-color: #FA6900;
+}
+
+#web_dev {
+    background-color: #CDEB8B;
+}
+
+h1 {
+    text-transform: none;
+}
+
+a {
+    text-decoration-color: blue;
+}
+
+#hero-section {
+    background-image: url('../images/heroimage.png');
+    height: 80vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+#hero-card {
+    background-color: rgba(0, 0, 0, 0.60);
+    backdrop-filter: blur(5px);
+    padding: 2vh;
+    width: fit-content;
+}
+
+.social_logos {
+    display: block;
+    border: 2vh white solid;
+    width: 8vh;
+    padding: 2vh;
+}
+
+.architects-daughter-regular {
+    font-family: "Architects Daughter", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* FLIP BOX */
+
+.flip-box {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    perspective: 1000px;
+}
+
+.flip-box-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.page-home .flip-box-inner {
+    border: #448F74 2px solid;
+}
+
+.page-research .flip-box-inner {
+    border: goldenrod 2px solid;
+}
+
+.flip-box:hover .flip-box-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-box-front,
+.flip-box-back {
+    position: absolute;
+    inset: 0;
+    backface-visibility: hidden;
+    overflow: hidden;
+}
+
+.page-home .flip-box-front,
+.page-home .flip-box-back {
+    background-color: #B1E2E7;
+    color: black;
+}
+
+.page-research .flip-box-front,
+.page-research .flip-box-back {
+    background-color: #FFE6CD;
+    color: black;
+}
+
+.flip-box-back {
+    transform: rotateY(180deg);
+    text-align: left;
+    overflow-y: auto;
+}
+
+.flip-box-back ul {
+    margin: 0.5rem 0 0 1.25rem;
+    padding-left: 0.5rem;
+}
+
+.flip-box-back a {
+    word-break: break-word;
+}
+
+.flip-box-front,
+.flip-box-back {
+    overflow: hidden;
+}
+
+.flip-box-headings-1 {
+    color: blue;
+}
+
+.flip-box-headings-2 {
+    font-family: serif;
+    color: black;
+    text-transform: none !important;
+}
+
+.research_images {
+    max-width: 70%;
+    max-height: 70%;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+
+/* FORM */
+
+#mobile-techno-form {
+    background-color: lightgray;
+}
+
+#iframe-div {
+    width: 100%;
+    height: 2000px;
+    position: relative;
+    padding-bottom: 200%;
+    overflow: hidden;
+}
+
+#iframe-div iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.input_divs {
+    margin-bottom: 4vh;
+}
+
+/* JS DEMOS */
+
+.demos {
+    background-color: lightgrey;
+}
+
+.demo-headings {
+    padding-bottom: 20px;
+    border-bottom: black 1px solid;
+}
+
+#comments p {
+    margin: 5px;
+    padding: 10px;
+    border: 1px gray solid;
+}
+
+#item-list {
+    margin-left: 30px;
+}
+
+.show-cart li {
+    display: flex;
+}
+
+.card {
+    margin-bottom: 20px;
+}
+
+.card-img-top {
+    width: 200px;
+    height: 200px;
+    align-self: center;
+}
+
+#abstract {
+    font-style: italic;
+    font-size: 1.2em;
+}
+
+#detailed {
+    font-style: normal;
+    font-size: 1.0em;
+    display: none;
+}

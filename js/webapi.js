@@ -106,22 +106,16 @@ function displayRecords(recordsToDisplay) {
     });
 }
 
-var searchTerm = searchBox.value.toLowerCase();
-var matchingRecords = [];
+function filterRecords() {
+    const searchTerm = searchBox.value.trim().toLowerCase();
 
-for (var i = 0; i < allRecords.length; i++) {
+    const matchingRecords = allRecords.filter(record =>
+        record.title.toLowerCase().includes(searchTerm) ||
+        record.description.toLowerCase().includes(searchTerm)
+    );
 
-    var record = allRecords[i];
-
-    var titleMatches = record.title.toLowerCase().indexOf(searchTerm) !== -1;
-    var descriptionMatches = record.description.toLowerCase().indexOf(searchTerm) !== -1;
-
-    if (titleMatches === true || descriptionMatches === true) {
-        matchingRecords.push(record);
-    }
+    displayRecords(matchingRecords);
 }
-
-displayRecords(matchingRecords);
 
 //------------------------------------------------------------------------------------
 //Using the Official Supabase Client 
